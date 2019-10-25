@@ -22,6 +22,15 @@ The notes of learning GO.
 ## Basic Knowledge
 - [package](https://golang.org/search?q=Package#Global_pkg/cmd/cgo)
 - [fmt](https://golang.org/pkg/fmt/)(print) 
+    - fmt.Printf
+        - Print Formatter
+        - this function allows you to format numbers, variables and strings into the first string parameter you give it
+    - fmt.Println
+        - Print Line
+        - This cannot format anything, it simply takes a string, prints it and append a newline character, \n
+    - fmt.Print
+        - Print
+        - same thing as Println() however it will NOT append a newline character
 - for loop:
     ```
     // self-added operator: <var>++
@@ -83,8 +92,17 @@ The notes of learning GO.
         - struct
         - map
         - channel
+    - [Pointers](https://tour.golang.org/moretypes/1)
+        - A pointer holds the memory address of a value
+        - The type *T is a pointer to a T value. Its zero value is nil
+        - The & operator generates a pointer to its operand
+        - The * operator denotes the pointer's underlying value.
 - [Mutable & Immutable Objects](https://stackoverflow.com/questions/8018081/which-types-are-mutable-and-immutable-in-the-google-go-language)
     - Mutable Objects:
         - arrays, slices, maps, channels, closures which are capturing at least 1 variable from the outer scope
     - Immutable Objects: 
         - interfaces, booleans, numeric values (including values of type int), strings, pointers, function pointers, and closures which can be reduced to function pointers, structs having a single field
+
+## Reference
+    - [Go語言從入門到進階實戰（視頻教學版）](https://www.books.com.tw/products/CN11547747)
+    - [Println vs Printf vs Print in Go](https://stackoverflow.com/questions/53879154/println-vs-printf-vs-print-in-go)
