@@ -2,7 +2,10 @@
 The notes of learning GO.
 
 ## How to run
-- `go run <script_name>`
+- `go run <script_name>.go`
+- build:
+    - `go build <script_name>.go`
+    - `./<script_name>`
 
 ## About GO
 - 由 Google 開發的類似 C 語言的一種靜態、編譯，自帶垃圾回收和原生支持併發 (goroutine) 的編程語言。
@@ -12,6 +15,7 @@ The notes of learning GO.
     - goroutine：可理解為一種虛擬 thread
     - channel：多個 goroutine 進行通信的通道
     - producer [goroutine] - ( channel )[send data] -> customer [goroutine]
+    - Go 沒有類！！然而，仍然可以在結構體類型上定義方法。
 - 應用：
     - [Docker](https://github.com/docker)
     - [golang](https://github.com/golang/go) 
@@ -195,8 +199,76 @@ The notes of learning GO.
         // &{11 9} 
     }
     ```
+    - Go does not have class-object architecture
+    ```
+    type Vertex struct {
+        X, Y float64
+    }
+
+    func (v *Vertex) Scale(f float64) {
+        v.X = v.X * f
+        v.Y = v.Y * f
+    }
+
+    func (v *Vertex) Abs() float64 {
+        return math.Sqrt(v.X*v.X + v.Y*v.Y)
+    }
+
+    func main() {
+        v := &Vertex{3, 4}
+        v.Scale(5)
+        fmt.Println(v, v.Abs())
+    }
+    ```
 - map
+    ```
+    type Vertex struct {
+        Lat, Long float64
+    }
+
+    // map
+    var m = map[string]Vertex{
+        "Bell Labs": {40.68433, -74.39967},
+        "Google":    {37.42202, -122.08408},
+    }
+
+    func main() {
+        fmt.Println(m)
+        // map[Bell Labs:{40.68433 -74.39967} Google:{37.42202 -122.08408}]
+
+        delete(m, "Google")
+        v, ok := m["Google"]
+        fmt.Println("The value:", v, "Present?", ok)
+        // The value: {0 0} Present? false
+    }
+    ```
+- goroutine
+    ```go f(x, y, z)```
 - channel
+    - Channels are a typed conduit through which you can send and receive values with the channel operator, <-.
+    ```
+    ch <- v    // Send v to channel ch.
+    v := <-ch  // Receive from ch, and assign value to v.
+    ```
+    - A sender can close a channel to indicate that no more values will be sent.
+    ```
+    func fibonacci(n int, c chan int) {
+        x, y := 0, 1
+        for i := 0; i < n; i++ {
+            c <- x
+            x, y = y, x+y
+        }
+        close(c)
+    }
+
+    func main() {
+        c := make(chan int, 10)
+        go fibonacci(cap(c), c)
+        for i := range c {
+            fmt.Println(i)
+        }
+    }
+    ```
 - [Pointers](https://tour.golang.org/moretypes/1)
     - A pointer holds the memory address of a value
     - The type *T is a pointer to a T value. Its zero value is nil
