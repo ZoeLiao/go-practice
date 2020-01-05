@@ -6,6 +6,8 @@ The notes of learning GO.
 - build:
     - `go build <script_name>.go`
     - `./<script_name>`
+- Install package:
+    - `go get <url>`
 
 ## About GO
 - 由 Google 開發的類似 C 語言的一種靜態、編譯，自帶垃圾回收和原生支持併發 (goroutine) 的編程語言。
@@ -22,6 +24,7 @@ The notes of learning GO.
     - [kubernetes (k8s)](https://github.com/kubernetes/kubernetes)
     - [beego](https://github.com/astaxie/beego)(web framework)
     - [martini](https://github.com/go-martini/martini)(web framework)
+    - [gin](https://github.com/gin-gonic/gin)
 - [A Tour of GO](https://tour.golang.org/list)
 
 ## Basic Knowledge
