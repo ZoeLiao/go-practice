@@ -8,6 +8,7 @@ func main() {
 	router := gin.Default()
 
 	// This handler will match /user/john but will not match /user/ or /user
+    // *gin.Context: get parameters
 	router.GET("/user/:name", func(c *gin.Context) {
 		name := c.Param("name")
 		c.String(http.StatusOK, "Hello %s", name)
@@ -22,5 +23,5 @@ func main() {
 		c.String(http.StatusOK, message)
 	})
 
-	router.Run(":8001")
+    router.Run(":8001") // default: 8080
 }
