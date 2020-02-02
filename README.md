@@ -291,3 +291,4 @@ The notes of learning GO.
 ## Reference
 - [Go語言從入門到進階實戰（視頻教學版）](https://www.books.com.tw/products/CN11547747)
 - [Println vs Printf vs Print in Go](https://stackoverflow.com/questions/53879154/println-vs-printf-vs-print-in-go)
+- [gobyexample](https://gobyexample.com/)
