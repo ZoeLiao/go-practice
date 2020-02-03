@@ -7,11 +7,10 @@ type Sort interface {
 }
 
 type bubbleSort struct {
-    array map[int]int
+    array []int
 }
 
 func (b bubbleSort) swap() {
-    fmt.Println(len(b.array))
     for i:=0; i<len(b.array)-1; i++ {
         for j:=1; j<len(b.array); j++ {
             if b.array[i] > b.array[j] {

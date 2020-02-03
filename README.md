@@ -288,6 +288,10 @@ The notes of learning GO.
     - Immutable Objects: 
         - interfaces, booleans, numeric values (including values of type int), strings, pointers, function pointers, and closures which can be reduced to function pointers, structs having a single field
 
+## More information
+- [Simplicity is complicated](https://talks.golang.org/2015/simplicity-is-complicated.slide)
+- [Getting to Go: The Journey of Go's Garbage Collector](https://blog.golang.org/ismmkeynote)
+
 ## Reference
 - [Go語言從入門到進階實戰（視頻教學版）](https://www.books.com.tw/products/CN11547747)
 - [Println vs Printf vs Print in Go](https://stackoverflow.com/questions/53879154/println-vs-printf-vs-print-in-go)
