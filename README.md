@@ -33,6 +33,7 @@ The notes of learning GO.
     - goenv aims to be as simple as possible and follow the already established successful version management model of pyenv and rbenv.
 - [govendor](https://github.com/kardianos/govendor)
     - The Vendor Tool for Go
+    - Install govendor: `go get -u github.com/kardianos/govendor`
     - `govendor sync`
 - [fmt](https://golang.org/pkg/fmt/)(print) 
     - fmt.Printf
