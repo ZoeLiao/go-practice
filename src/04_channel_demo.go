@@ -31,7 +31,8 @@ func customer(channel <-chan string) {
     for {
         // 用 select 處理超時或終止以防 DoS attach
         select {
-            // 從 channel 取出數據 （阻塞直到 channel 返回數據）
+            // 採 FIFO，從 channel 取出數據 （阻塞直到 channel 返回數據）
+            // 防止 race condition
             case <- channel:
                 message := <-channel
                 color.info.Println(message)
@@ -44,6 +45,7 @@ func customer(channel <-chan string) {
 
 func main() {
     channel := make(chan string)
+    // gorountine
     go producer("cat", channel)
     go producer2("dog", channel)
     customer(channel)

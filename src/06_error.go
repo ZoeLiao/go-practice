@@ -1,3 +1,4 @@
+// reference https://gobyexample.com/errors
 package main
 
 import (
