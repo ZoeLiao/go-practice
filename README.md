@@ -34,7 +34,11 @@ The notes of learning GO.
 - [govendor](https://github.com/kardianos/govendor)
     - The Vendor Tool for Go
     - Install govendor: `go get -u github.com/kardianos/govendor`
-    - `govendor sync`
+    - `export PATH=$PATH:$(go env GOPATH)/bin`
+    - `export GOPATH=$PWD`
+    - `mkdir src && cd src`
+    - `govendor init`
+    - If you ignore vendor\/\*\/, restore dependencies with govendor sync
 - [fmt](https://golang.org/pkg/fmt/)(print) 
     - fmt.Printf
         - Print Formatter
